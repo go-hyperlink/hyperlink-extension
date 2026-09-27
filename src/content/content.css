@@ -1,0 +1,144 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:host {
+  all: initial;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Segoe UI", Roboto, "Inter", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
+  color: #f1f5f9;
+  font-size: 14px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Minimalist Ultra-Smooth Scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 9999px;
+  transition: background 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+/* Glass Theme System: Single Mode - Permanent Dark Glassy Container with White Text */
+:host,
+#hyperlink-root-container {
+  --hl-glass-panel-bg: rgba(11, 15, 25, 0.72);
+  --hl-glass-panel-border: rgba(255, 255, 255, 0.12);
+  --hl-glass-panel-shadow: 0 24px 64px -12px rgba(0, 0, 0, 0.65), inset 0 1px 1px 0 rgba(255, 255, 255, 0.14);
+  --hl-card-bg: rgba(255, 255, 255, 0.04);
+  --hl-card-border: rgba(255, 255, 255, 0.08);
+  --hl-text-primary: #ffffff;
+  --hl-text-secondary: #e2e8f0;
+  --hl-text-muted: #94a3b8;
+  color: #ffffff;
+}
+
+/* Glass Panels with Deep Backdrop Blur */
+.hyperlink-glass-panel,
+.hyperlink-glass-base {
+  background: var(--hl-glass-panel-bg, rgba(11, 15, 25, 0.72));
+  backdrop-filter: blur(28px) saturate(180%);
+  -webkit-backdrop-filter: blur(28px) saturate(180%);
+  border: 1px solid var(--hl-glass-panel-border, rgba(255, 255, 255, 0.12));
+  box-shadow: var(--hl-glass-panel-shadow, 0 24px 64px -12px rgba(0, 0, 0, 0.65), inset 0 1px 1px 0 rgba(255, 255, 255, 0.14));
+}
+
+/* Subtle Glass Card Layer inside panels */
+.hyperlink-glass-card {
+  background: var(--hl-card-bg, rgba(255, 255, 255, 0.04));
+  border: 1px solid var(--hl-card-border, rgba(255, 255, 255, 0.08));
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hyperlink-glass-card:hover {
+  filter: brightness(1.05);
+}
+
+/* Selection within Hyperlink UI */
+::selection {
+  background-color: rgba(99, 102, 241, 0.45);
+  color: #ffffff;
+}
+
+.select-text {
+  user-select: text !important;
+  -webkit-user-select: text !important;
+}
+
+.select-none {
+  user-select: none !important;
+  -webkit-user-select: none !important;
+}
+
+/* Silky Spring Animations */
+@keyframes hyperlink-slide-in-left {
+  from {
+    transform: translateX(-16px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes hyperlink-slide-in-right {
+  from {
+    transform: translateX(16px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes hyperlink-fade-scale {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-hyperlink-slide {
+  animation: hyperlink-slide-in-left 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-hyperlink-fade {
+  animation: hyperlink-fade-scale 0.18s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Guarantee Hyperlink is completely hidden during browser printing */
+@media print {
+  :host,
+  #hyperlink-root-container,
+  aside,
+  div {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+  }
+}

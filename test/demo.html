@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hyperlink Interactive Testbed & Demo</title>
+  <style>
+    :root {
+      --bg: #0d1117;
+      --card-bg: #161b22;
+      --border: #30363d;
+      --text: #c9d1d9;
+      --text-bright: #f0f6fc;
+      --accent: #58a6ff;
+    }
+    body {
+      margin: 0;
+      padding: 40px 20px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    header {
+      margin-bottom: 40px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 20px;
+    }
+    h1, h2, h3 {
+      color: var(--text-bright);
+    }
+    .badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 9999px;
+      background: rgba(88, 166, 255, 0.15);
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 28px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+    }
+    th, td {
+      border: 1px solid var(--border);
+      padding: 10px 14px;
+      text-align: left;
+      font-size: 14px;
+    }
+    th {
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text-bright);
+    }
+    pre {
+      background: #000;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px;
+      overflow-x: auto;
+      color: #79c0ff;
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      font-size: 13px;
+    }
+    .cta-banner {
+      background: linear-gradient(135deg, rgba(6, 182, 212, 0.15), rgba(37, 99, 235, 0.15));
+      border: 1px solid rgba(6, 182, 212, 0.3);
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .keycap {
+      background: #21262d;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 3px 8px;
+      font-size: 12px;
+      font-family: monospace;
+      color: var(--accent);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="cta-banner">
+      <div>
+        <h3 style="margin: 0; color: #fff;">Hyperlink Extension Demo Harness</h3>
+        <p style="margin: 4px 0 0 0; font-size: 13px; color: #94a3b8;">
+          Press <span class="keycap">Ctrl + Space</span> or <span class="keycap">Alt + Space</span> or click the floating trigger on the left to open Hyperlink!
+        </p>
+      </div>
+      <button 
+        id="demo-toggle-btn"
+        style="padding: 10px 18px; background: #06b6d4; color: #020617; border: none; border-radius: 10px; font-weight: bold; cursor: pointer;"
+      >
+        Open Hyperlink
+      </button>
+    </div>
+
+    <header>
+      <span class="badge">Article & Context Test</span>
+      <h1 style="margin-top: 10px;">The Next Generation of Web Architecture: Reactive Sandboxes & Context Intelligence</h1>
+      <p style="color: #8b949e;">By Dr. Elena Vance • Published September 2026 • 8 min read</p>
+    </header>
+
+    <main>
+      <!-- Article Section -->
+      <section class="card">
+        <h2>Executive Overview</h2>
+        <p>
+          Modern web applications require an unprecedented level of integration between autonomous agent systems and client-side document object models. When developing browser overlays, isolation is the paramount technical challenge. Shadow DOM boundary containment ensures that host stylesheet cascade rules never interfere with the overlay component tree.
+        </p>
+        <p>
+          Highlight any sentence in this paragraph to verify Hyperlink's <strong>floating selection toolbar</strong>! You can instantly run AI Explain, Quick Translation, Web Search, or Text-to-Speech Read Aloud directly over your active selection.
+        </p>
+        <blockquote>
+          "A universal command center does not replace the web; it amplifies human curiosity with instantaneous contextual superpowers."
+        </blockquote>
+      </section>
+
+      <!-- Video Section for Video Tools & Captions -->
+      <section class="card">
+        <h2>HTML5 Video Integration Test</h2>
+        <p>Test Hyperlink's <strong>Video Tools Panel</strong> (Playback speed, Loop, Picture-in-Picture, Screenshot frame) and <strong>Live Captions</strong>:</p>
+        <div style="margin: 15px 0;">
+          <video 
+            id="demo-video" 
+            controls 
+            playsinline 
+            style="width: 100%; max-height: 360px; border-radius: 8px; background: #000;"
+            src="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4"
+            poster="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/BigBuckBunny.jpg"
+          >
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </section>
+
+      <!-- Shopping & Pricing Section -->
+      <section class="card">
+        <h2>E-Commerce & Product Extraction Test</h2>
+        <div style="display: flex; gap: 20px; align-items: center;">
+          <div style="flex: 1;">
+            <h3 style="margin-top: 0;">Quantum OLED Ultra Display 34"</h3>
+            <p style="font-size: 24px; font-weight: bold; color: #10b981; margin: 8px 0;">
+              <span class="price-tag">$1,299.99</span>
+            </p>
+            <p style="font-size: 13px; color: #8b949e;">SKU: QOLED-34X-2026 • In Stock • Free 2-Day Shipping</p>
+            <ul style="font-size: 13px; padding-left: 20px;">
+              <li>3440 x 1440 Ultrawide Curved QD-OLED</li>
+              <li>240Hz Refresh Rate with 0.03ms Response Time</li>
+              <li>DisplayHDR True Black 400 Certification</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Extractor Data Table -->
+      <section class="card">
+        <h2>Data Extraction Test (Emails, Contacts, Tables)</h2>
+        <p>Open <strong>Content Extractor</strong> in Hyperlink to extract all emails, phone numbers, and download this table as JSON/CSV:</p>
+        <table>
+          <thead>
+            <tr>
+              <th>Contact Name</th>
+              <th>Role</th>
+              <th>Email Address</th>
+              <th>Phone</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Sarah Chen</td>
+              <td>Lead Architecture Engineer</td>
+              <td>sarah.chen@hyperlink-lab.dev</td>
+              <td>+1 (555) 234-8901</td>
+            </tr>
+            <tr>
+              <td>Marcus Aurelius</td>
+              <td>Systems Strategist</td>
+              <td>marcus@roman-philosophy.org</td>
+              <td>+1 (555) 890-1234</td>
+            </tr>
+            <tr>
+              <td>Amara Patel</td>
+              <td>Design Director</td>
+              <td>amara.patel@hyperlink-studio.design</td>
+              <td>+44 20 7946 0912</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- Code Snippet for DevTools -->
+      <section class="card">
+        <h2>Developer Code Inspection Test</h2>
+        <pre><code>// Hyperlink Autonomous Command Dispatcher
+async function dispatchAction(command: string, context: PageMetadata) {
+  const intent = await parseIntent(command);
+  console.log(`Executing ${intent.action} for ${context.url}`);
+  return intent.handler(context);
+}</code></pre>
+      </section>
+    </main>
+
+    <footer style="margin-top: 40px; border-top: 1px solid var(--border); padding-top: 20px; font-size: 13px; color: #8b949e; text-align: center;">
+      Hyperlink Test Harness • Designed for Chrome MV3 Extension Verification
+    </footer>
+  </div>
+
+  <!-- Content script & CSS injected for standalone testing -->
+  <script src="content.js"></script>
+  <script>
+    document.getElementById('demo-toggle-btn').addEventListener('click', () => {
+      window.dispatchEvent(new KeyboardEvent('keydown', {
+        key: ' ',
+        code: 'Space',
+        ctrlKey: true,
+        bubbles: true
+      }));
+    });
+  </script>
+</body>
+</html>
