@@ -17,14 +17,13 @@ async function build() {
   console.log('🎨 Generating icons...');
   execSync('node scripts/generate-icons.js', { cwd: rootDir, stdio: 'inherit' });
 
-  // 2. Ensure dist directories
-  if (!fs.existsSync(distDir)) {
-    fs.mkdirSync(distDir, { recursive: true });
+  // 2. Clean and ensure fresh dist directory
+  if (fs.existsSync(distDir)) {
+    fs.rmSync(distDir, { recursive: true, force: true });
   }
+  fs.mkdirSync(distDir, { recursive: true });
   const iconsDistDir = path.join(distDir, 'icons');
-  if (!fs.existsSync(iconsDistDir)) {
-    fs.mkdirSync(iconsDistDir, { recursive: true });
-  }
+  fs.mkdirSync(iconsDistDir, { recursive: true });
 
   // 3. Copy Manifest & Icons
   console.log('📋 Copying manifest & assets...');

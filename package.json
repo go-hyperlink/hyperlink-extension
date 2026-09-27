@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "node scripts/build.js"
+    "build": "node scripts/build.js",
+    "package": "node scripts/package.js"
   },
   "dependencies": {
     "lucide-react": "^1.16.0",
